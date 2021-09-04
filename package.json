@@ -1,9 +1,9 @@
 {
-	"name": "optimizedhtml",
-	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "portfolio PNA97",
 	"main": "index.js",
-	"author": "WebDesign Master",
+	"author": "PNA97",
 	"license": "ISC",
 	"scripts": {
 		"start": "gulp",
