@@ -1,0 +1,234 @@
+.h1
+  font-size: 45px
+  line-height: 79px
+  background: linear-gradient(to left, #FFFFFF 1%, #333)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  margin: 0
+  letter-spacing: 5px
+
+.menu_icon
+  display: none
+
+.header
+  width: 100%
+  height: 22vh
+  margin-bottom: 50px
+
+  &_wrapper
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-top: 50px
+
+  &_logo
+    a
+      text-decoration: none
+      display: inline-flex
+
+      p
+        font-family: orbitron, sans-serif
+        font-size: 30px
+        background: linear-gradient(to left, #FFFFFF 1%, #333)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        letter-spacing: 5px
+
+  &_nav
+    ul
+      list-style-type: none
+      display: flex
+      text-align: center
+      padding: 0
+
+      li
+        margin-right: 10px
+
+        a
+          position: relative
+          width: 107px
+          display: inline-block
+          text-decoration: none
+          color: #ffffff
+          font-size: 14px
+          line-height: 26px
+          letter-spacing: 2px
+          transition: 0.5s
+          overflow: hidden
+          padding: 10px
+
+          &:hover
+            background: #FFFFFF
+            color: #050801
+            box-shadow: 0 0 5px #FFFFFF, 0 0 25px #FFFFFF, 0 0 50px #FFFFFF, 0 0 200px #FFFFFF
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005)
+
+          &:nth-child(1)
+            filter: hue-rotate(270deg)
+
+          &:nth-child(2)
+            filter: hue-rotate(110deg)
+
+          span
+            position: absolute
+            display: block
+
+            &:nth-child(1)
+              top: 0
+              left: 0
+              width: 100%
+              height: 2px
+              background: linear-gradient(90deg, transparent, #FFFFFF)
+              animation: animate1 1s linear infinite
+
+            &:nth-child(2)
+              top: -100%
+              right: 0
+              width: 2px
+              height: 100%
+              background: linear-gradient(180deg, transparent, #FFFFFF)
+              animation: animate2 1s linear infinite
+              animation-delay: 0.25s
+
+            &:nth-child(3)
+              bottom: 0
+              right: 0
+              width: 100%
+              height: 2px
+              background: linear-gradient(270deg, transparent, #FFFFFF)
+              animation: animate3 1s linear infinite
+              animation-delay: 0.50s
+
+            &:nth-child(4)
+              bottom: -100%
+              left: 0
+              width: 2px
+              height: 100%
+              background: linear-gradient(360deg, transparent, #FFFFFF)
+              animation: animate4 1s linear infinite
+              animation-delay: 0.75s
+
+@keyframes animate1
+  0%
+    left: -100%
+
+  50%, 100%
+    left: 100%
+
+@keyframes animate2
+  0%
+    top: -100%
+
+  50%, 100%
+    top: 100%
+
+@keyframes animate3
+  0%
+    right: -100%
+
+  50%, 100%
+    right: 100%
+
+@keyframes animate4
+  0%
+    bottom: -100%
+
+  50%, 100%
+    bottom: 100%
+
+@media only screen and (max-width: 767px)
+  .header_nav
+    ul
+      display: block
+
+  .menu_icon
+    z-index: 11
+    display: block
+    position: relative
+    width: 30px
+    height: 18px
+    cursor: pointer
+    margin-top: 15px
+    &.active
+      margin-top: -30px
+
+    &.active span
+      transform: scale(0) translate(0, -50%)
+
+    &.active::before
+      top: 50%
+      transform: rotate(-45deg) translate(0, -50%)
+
+    &.active::after
+      bottom: 50%
+      transform: rotate(45deg) translate(0, 50%)
+
+    span, &::before, &::after
+      left: 0
+      position: absolute
+      height: 10%
+      width: 100%
+      transition: all .3s ease
+      background-color: #FFFFFF
+
+    &::before, &::after
+      content: ''
+
+    &::before
+      top: 0
+
+    &::after
+      bottom: 0
+
+    span
+      top: 50%
+      transform: scale(1) translate(0, -50%)
+
+  .header_nav
+    position: fixed
+    display: flex
+    justify-content: center
+    top: 60px
+    right: -100%
+    width: 30%
+    height: 150px
+    background-color: #000
+    transition: right .3s ease 0s
+    z-index: 10
+    border-radius: 5px
+    overflow: hidden
+
+    ul
+      li
+        a
+          font-size: 12px
+          line-height: 22px
+          &:hover
+            box-shadow: none
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent)
+
+          span
+            display: none
+
+    &.active
+      right: 0
+      overflow: hidden
+
+@media only screen and (max-width: 576px)
+  .header_logo
+    a
+      p
+        margin-left: 20px
+
+
+
+
+
+
+
+
+
+
+
+
+
