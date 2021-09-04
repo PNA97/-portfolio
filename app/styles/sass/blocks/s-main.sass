@@ -67,10 +67,14 @@
   &_button
     width: 225px
     height: 65px
-    background: #FFFFFF
     text-decoration: none
-    border: none
-    border-radius: 5px
+    button
+      width: 225px
+      height: 65px
+      border: none
+      border-radius: 5px
+      color: #000
+      background: #FFFFFF
 
     &:hover
       background: #FFFFFF
@@ -83,6 +87,54 @@
 
       &:nth-child(2)
         filter: hue-rotate(110deg)
+
+  &_popup
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.55)
+    top: 0
+    left: 0
+    opacity: 0
+    visibility: hidden
+    transition: all .3s ease
+    &:target
+      opacity: 1
+      visibility: visible
+    &:target .s-main_popup-content
+      transform: translate(0, 0)
+      opacity: .9
+    &-body
+      min-height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 30px 10px
+    &-content
+      background-color: #000
+      color: #FFFFFF
+      min-width: 200px
+      padding: 30px
+      position: relative
+      transition: all .3s ease
+      opacity: 0
+      transform: translate(0, -100%)
+      border-radius: 5px
+
+    &-title
+      font-size: 36px
+      margin-bottom: 15px
+    &-close
+      position: absolute
+      right: 15px
+      top: 5px
+      font-size: 20px
+      color: #FFFFFF
+      text-decoration: none
+      &:hover
+        color: #FFFFFF
+        opacity: .8
+
 
 
 @media only screen and (max-width: 320px)
